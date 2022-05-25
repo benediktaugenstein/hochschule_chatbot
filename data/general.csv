@@ -1,160 +1,167 @@
-Sentence,Result
-What are you?,Existence
-Are you a robot?,Existence
-Are you an artificial intelligence?,Existence
-Do you have feelings?,Existence
-What is your purpose?,Existence
-Why do you exist?,Existence
-Why are you here?,Existence
-Why am I here?,Existence
-What is the meaning of life?,Existence
-Is there a purpose in life?,Existence
-Do you know how it is like to feel?,Existence
-Why do we live?,Existence
-Why are we here?,Existence
-Who are you?,Existence
-hi how are you,Feeling
-hello how are you,Feeling
-How are you?,Feeling
-how are you doing,Feeling
-How is everything?,Feeling
-how is it going?,Feeling
-how are you feeling,Feeling
-feeling,Feeling
-hey how are you doing,Feeling
-How is everything going?,Feeling
-Hey how is it going?,Feeling
-I am feeling good,Feeling
-I am feeling bad.,Feeling
-I feel bad,Feeling
-I feel awesome,Feeling
-I feel horrible,Feeling
-I feel super good,Feeling
-I feel fantastic,Feeling
-I feel awful,Feeling
-Do you feel bad?,Feeling
-Are you feeling bad?,Feeling
-Are you feeling good?,Feeling
-Do you feel fantastic?,Feeling
-hi hows it going,Feeling
-good,Good
-awesome,Good
-terrific,Good
-amazing,Good
-very good,Good
-not bad,Good
-okay,Good
-well,Good
-Im good,Good
-im awesome,Good
-im amazing,Good
-not poor,Good
-not poorly,Good
-not horribly,Good
-i do not feel terribly,Good
-I feel well,Good
-i do feel well,Good
-well,Good
-i am feeling well,Good
-feeling well,Good
-not feeling well,Bad
-not well,Bad
-i am not feeling well,Bad
-i do not feel well,Bad
-bad,Bad
-poor,Bad
-poorly,Bad
-badly,Bad
-horribly,Bad
-terribly,Bad
-very bad,Bad
-horrible,Bad
-awful,Bad
-not good,Bad
-not awesome,Bad
-not really good,Bad
-like shit,Bad
-shitty,Bad
-i feel like shit,Feeling
-How do i feel?,Feeling
-How am I feeling?,Feeling
-I dont know how i feel,Feeling
-Hey,Greeting
-Hey there,Greeting
-hello,Greeting
-Good morning,Greeting
-It is nice meeting you,Greeting
-It is good to meet you,Greeting
-Hi there,Greeting
-hello there,Greeting
-hello it is nice to meet you,Greeting
-hi it is nice to meet you,Greeting
-greeting,Greeting
-greetings,Greeting
-Hey you,Greeting
-hello you,Greeting
-hi you,Greeting
-What is your name,Name
-Tell me your name,Name
-I would like to know your name,Name
-How is your name?,Name
-How is your name?,Name
-What is your name?,Name
-Would you mind telling me your name?,Name
-Whats your name,Name
-I would like to know your name,Name
-Hi what is your name,Name
-Hello what is your name,Name
-Hey what is your name,Name
-name,Name
-Names,Name
-How are you called?,Name
-My name is,Name
-My name is,Name
-They call me,Name
-I am called,Name
-The name I have is,Name
-What  is the name of this?,Name
-How is this called?,Name
-Do you have a name for this?,Name
-How is he called?,Name
-How is this person called?,Name
-What is its name?,Name
-What is his name?,Name
-What is her name?,Name
-How is she called?,Name
-Does this have a name?,Name
-What is their name?,Name
-How are they called?,Name
-What are you called?,Name
-What time is it?,Time
-Could you tell me the time?,Time
-I would like to know the time.,Time
-Tell me the time,Time
-How late is it?,Time
-I would like to know how late it is.,Time
-What is the current time?,Time
-Do you know the time at the moment?,Time
-Whicht time is it?,Time
-time,Time
-times,Time
-What date is it?,Date
-which date is it,Date
-Could you tell me the date?,Date
-I would like to know the date.,Date
-Tell me the date,Date
-I would like to know which date it is.,Date
-What is the current date?,Date
-Do you know the date at the moment?,Date
-date,Date
-dates,Date
-Do you like,Like
-What do you like,Like
-Do you enjoy,Like
-Whats your favorite,Like
-whats your favourite,Like
-what is your favorite,Like
-what do you like most,Like
-which do you like the most,Like
-Tell me what you like,Like
-Could you tell me which one you like the most,Like
+﻿Input,Output
+Studentisches Leben Aalen,Studentisches Leben
+Wie ist das studentische leben in aalen,Studentisches Leben
+Studentisches Leben,Studentisches Leben
+freizeit aalen,Studentisches Leben
+freiteitbeschäftigung,Studentisches Leben
+kultur aalen,Studentisches Leben
+kultur,Studentisches Leben
+lernräume aalen,Studentisches Leben
+lernräume in aalen,Studentisches Leben
+lernräume,Studentisches Leben
+Hochschulleben in Aalen,Studentisches Leben
+Hochschulleben,Studentisches Leben
+Leben an der Hochschule,Studentisches Leben
+leben hochschule,Studentisches Leben
+leben Campus aalen,Studentisches Leben
+campusleben aalen,Studentisches Leben
+campusleben,Studentisches Leben
+leben aalen,Studentisches Leben
+leben,Studentisches Leben
+wohnen aalen,Studentisches Leben
+aalen wohnung,Studentisches Leben
+aalen wohnen,Studentisches Leben
+wohnung finden aalen,Studentisches Leben
+wie finde ich eine wohnung in aalen,Studentisches Leben
+wie kann ich in aalen eine Wohnung finden?,Studentisches Leben
+Wie lebt es sich in aalen,Studentisches Leben
+wo lebt man am besten in aalen?,Studentisches Leben
+Was sind die besten Freizeitbeschäftigungen in Aalen,Studentisches Leben
+Was kann man in Aalen machen?,Studentisches Leben
+Wie komme ich von a nach b?,Studentisches Leben
+Wie bin ich mobil in aalen,Studentisches Leben
+Aalen mobilität,Studentisches Leben
+aalen busse,Studentisches Leben
+aalen bus,Studentisches Leben
+aalen bahn,Studentisches Leben
+Busfahrplan aalen,Studentisches Leben
+Parkplätze hochschule aalen,Studentisches Leben
+kann man an der hochschule parken?,Studentisches Leben
+auto aalen,Studentisches Leben
+autofahren,Studentisches Leben
+autos,Studentisches Leben
+Hochschulsport,Studentisches Leben
+hochschule sport aalen,Studentisches Leben
+sport an der hochschule,Studentisches Leben
+gibt es ein sportangebot,Studentisches Leben
+sportangebot hochschule,Studentisches Leben
+Was für sportarten gibt es an der hochschule?,Studentisches Leben
+Studienangebot,Studienangebot
+Studienangebot aalen,Studienangebot
+Studiengänge hs aalen,Studienangebot
+Studiengänge hochschule aalen,Studienangebot
+was für Studiengänge gibt es?,Studienangebot
+Studiengänge Bachelor,Studienangebot
+Studien gänge master?,Studienangebot
+orientierungssemester hochschule aalen,Studienangebot
+infos über orientierungssemester,Studienangebot
+informationen orientierungssemester,Studienangebot
+Berufsbegleitend,Studienangebot
+Berufs begleitende studienangebote,Studienangebot
+berufs begleitend,Studienangebot
+berufsbegleitende studiengänge,Studienangebot
+nc frei,Studienangebot
+nc freie,Studienangebot
+nc-freie Studiengänge,Studienangebot
+nc freie Studiengänge,Studienangebot
+nc frei studieren,Studienangebot
+Freie Studienplätze,Studienangebot
+Studium platz frei,Studienangebot
+Losverfahren,Studienangebot
+Wie funktioniert das Losverfahren?,Studienangebot
+buch suchen,Bibliothek
+buch ausleihen,Bibliothek
+bücher ausleihen,Bibliothek
+wie kann ich bücher ausleihen?,Bibliothek
+bibliothek öffnungszeiten,Bibliothek
+bibliothek,Bibliothek
+bücherei,Bibliothek
+buch,Bibliothek
+bücher,Bibliothek
+buch bestellen,Bibliothek
+ich möchte bücher bestellen,Bibliothek
+bücher leihen,Bibliothek
+ausleihen,Bibliothek
+buch vormerken,Bibliothek
+lernplatz,Bibliothek
+lernplatz reservieren,Bibliothek
+Lernplätze,Bibliothek
+open access,Bibliothek
+was ist open access,Bibliothek
+publizieren unter open access,Bibliothek
+open acces informationen,Bibliothek
+publikation,Bibliothek
+publikation open access,Bibliothek
+publizieren,Bibliothek
+bücherei öffnungszeiten,Bibliothek
+bücherei öffnung,Bibliothek
+Beratung,Beratung
+Infopoint,Beratung
+infopoint beratung,Beratung
+infopoint beraten,Beratung
+wo kann ich beraten werden?,Beratung
+beratung studierende,Beratung
+beratung studenten,Beratung
+studierendenberatung wo,Beratung
+studien beratung,Beratung
+beraten,Beratung
+zentrale studienberatung,Beratung
+zentrale studien beratung,Beratung
+psychosoziale beratung,Beratung
+psychologische beratung,Beratung
+psychologische hilfe,Beratung
+gleichstellung beratung,Beratung
+gleichstellung hochschule aalen,Beratung
+gleichstellung,Beratung
+diversity,Beratung
+behinderung,Beratung
+diversity aalen,Beratung
+diversity hochschule aalen,Beratung
+diversity hs aalen,Beratung
+behinderung hs aalen,Beratung
+behinderung an der Hochschule,Beratung
+Hochschule aalen behinderung,Beratung
+chancengleichheit,Beratung
+hilfe diskriminierung,Beratung
+hilfe,Beratung
+hilfe sexuelle belästigung,Beratung
+Bewerbung,Bewerbung
+Bewerbung an der hochschule,Bewerbung
+wie bewerbe ich mich,Bewerbung
+wie kann ich mich bewerben,Bewerbung
+bewerbungsfristen,Bewerbung
+bewerbungsfristen studiengänge,Bewerbung
+bewerbung hs aalen,Bewerbung
+hochschule aalen bewerbung,Bewerbung
+bewerbungsverfahren,Bewerbung
+bewerbungsprozess,Bewerbung
+Bewerber an der Hochschule aalen,Bewerbung
+zulassung noten hs aalen,Bewerbung
+nc hochschule aalen,Bewerbung
+zulassung,Bewerbung
+Bewerbung bachelor,Bewerbung
+master bewerbung,Bewerbung
+bewerbung master,Bewerbung
+bachelor bewerbung,Bewerbung
+wie bewerbe ich mich richtig,Bewerbung
+informationen bewerbung ,Bewerbung
+infos zur bewerbung,Bewerbung
+Studienordnung,Studieren
+studien und prüfungsordnung,Studieren
+prüfungsordnung,Studieren
+studien- und prüfungsordnung,Studieren
+studien-und prüfungsordnung,Studieren
+studien ordnung,Studieren
+prüfungs ordnung,Studieren
+prüfung ordnung,Studieren
+studentische abteilung,Studieren
+vorlesungsplan,Studieren
+wo finde ich die spo,Studieren
+prüfungsordnung hs aalen,Studieren
+wo prüfungsordnung,Studieren
+vorlesungsplan hs aalen,Studieren
+vorlesungsplan hochschule,Studieren
+wo finde ich den vorlesungsplan,Studieren
+wo finde ich die prüfungsordnung,Studieren
+vorlesung plan,Studieren
+vorlesungs plan wo,Studieren

@@ -1,7 +1,5 @@
 gunicorn
 flask
 tensorflow-cpu
-datetime
 scikit-learn
 pandas
-googletrans==3.1.0a0

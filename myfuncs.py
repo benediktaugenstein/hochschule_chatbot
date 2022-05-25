@@ -1,24 +1,11 @@
-def helper2(x):
-  x = x.upper() + 'lalala'
-  return x
-
 def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
-  from subs import sub
-  from datetime import datetime, timezone, timedelta
   from tensorflow.keras.preprocessing.sequence import pad_sequences
   from flask import session
-  contractions = sub()
-  for key, value in contractions.items():
-    search = key + ' '
-    if search in input_initial:
-      input_initial = input_initial.replace(key, value)
   input_prep = [input_initial]
   inp = tokenizers[0].texts_to_sequences(input_prep)
   inp = pad_sequences(inp, maxlen=lengths_input[0], padding='post', truncating='post')
   prediction = models[0].predict(inp)
-  
-  #print('Name', 'Time', 'Greeting')
-  #print(prediction)
+
   max_pred = max(prediction[0])
   for i, x in enumerate(prediction[0]):
     if x == max_pred:
@@ -34,16 +21,14 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
     var = ''
   elif  sum(inp[0]) == 0:
     output = 'Hello, my friend. Unfortunately, I did not really understand that.'
-  elif var == 'Greeting':
-    output = 'Hello there'
-  elif var == 'Name':
-    output = 'My name is Ben, and yours?'
-  elif var == 'Time' or var == 'Date':
-    now = datetime.now().utcnow()+timedelta(hours=1)
-    time = now.strftime("%H:%M")
-    date = now.strftime("%Y-%m-%d")
-    output = 'Currently, it is' + time + '. The date is: ' + date + '.'
-  elif var =='Feeling':
+  elif var == 'Beratung':
+    output = '''Suchst du Informationen zur Beratungsangelegenheiten? \n
+    Zu folgenden Themen konnten wir Informationen finden: 
+    Zentrale Studienberatung, Nachhilfe und psychische Gesundheit: https://www.hs-aalen.de/de/facilities/11
+    Psychosoziale Beratungsstelle: https://studierendenwerk-ulm.de/beratung-betreuung/psychosoziale-beratung/
+    Gleichstellung, Chancengleichheit, Behinderung, Diversity sowie Hilfe bei Diskriminierung oder sexueller Belästigung: https://www.hs-aalen.de/de/facilities/219
+    '''
+  elif var == 'Bibliothek':
     inp_feel = tokenizers[1].texts_to_sequences(input_prep)
     inp_feel = pad_sequences(inp_feel, maxlen=lengths_input[1], padding='post', truncating='post')
     prediction = models[1].predict(inp_feel)
@@ -55,36 +40,39 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
         prediction[0][i]=0
     prediction_inverse_transformed = ohe2.inverse_transform(prediction)
     var_feeling = prediction_inverse_transformed[0]
+
     if max_pred <= 0.28:
       output = 'Sorry, I did not understand that.'
-    elif var_feeling == 'feel_HAL':
-      output = 'Im good, how about you?'
-    elif var_feeling == 'feel_person_good':
-      output = 'I am happy that you are feeling well.'
-    elif var_feeling == 'feel_person_bad':
-      output = 'I am sorry to hear that.'
-    elif var_feeling == 'feel_person_question':
-      output = 'I do not know. How do you feel?'
-  elif var == 'Existence':
-    output = 'I am an artificial intelligence and my name is Ben. I do not have feelings. Basically, I am just statistics. My purpose is to talk to you. How may I help you?'
-  elif var == 'Good':
-    if session['last_message'] == 'Feeling':
-      output = 'That is nice.'
-    else:
-      output = 'Okay.'
-  elif var == 'Bad':
-    if session['last_message'] == 'Feeling':
-      output = 'I am sorry.'
-    else:
-      output = 'Okay.'
-  elif var == 'Like':
-    output = 'I am a robot without feelings. I do not really like anything, I am sorry.'
-  
-  #prediction = 'hello'
-  ##var = prediction
+    elif var_feeling == 'Öffnungszeiten':
+      output = 'Öffnungszeiten sind xyz...'
+    elif var_feeling == 'LP_Reservieren':
+      output = 'Hier reservierst du...'
+    elif var_feeling == 'Bücher_suchen':
+      output = 'Hier kannst du bücher suchen'
+    elif max_pred > 0.28:
+      output = '''Suchst du Informationen zur Bibliothek?\n
+      Zu folgenden Themen konnten wir Informationen finden:
+      Öffnungszeiten: https://www.hs-aalen.de/de/pages/bibliothek_oeffnungszeiten
+      Bücher finden: https://www.hs-aalen.de/de/pages/bibliothek_suchenundfinden
+      Reservierung Lernplatz: https://affluences.com/hochschule-aalen/bibliothek
+      Publizieren und Open Access: https://www.hs-aalen.de/de/pages/bibliothek_publizieren-und-open-access
+      Weitere Informationen zur Bibliothek könnt ihr hier finden: https://www.hs-aalen.de/de/facilities/3'''
+
+  elif var == 'Bewerbung':
+    output = '''Suchst du Informationen zur Bewerbung? \n
+    Hier kannst du Infos zu der Bewerbung sowohl im Bachelor als auch im Master finden:
+    https://www.hs-aalen.de/pages/bewerben
+    '''
+  elif var == 'Studentisches Leben':
+    output = '''Hast du Fragen zum studentischen Leben hier in Aalen?
+    Zu Folgenden Bereichen konnten Informationen gefunden werden:
+    Wohnen, Mensa, Mobilität, Freizeit & Kultur, Hochschulleben, Hochschulsport, Lernräume, Lehrpreis, Karriereportal
+    Alle Infos findest du hier: https://www.hs-aalen.de/de/facilities/63'''
+  elif var == 'Studienangebot':
+    output = 'Studienangebot'
+
   session['last_message'] = var
 
-  #var_string_prep = str(output) + '<br>' + str(initial_input) + '<br>'
   var_string_prep = output
   var_string = str(var_string_prep)
   return var_string
