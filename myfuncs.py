@@ -17,10 +17,10 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
   #print('Predicted category is: ', prediction_inverse_transformed[0])
   var = prediction_inverse_transformed[0]
   if max_pred <= 0.28:
-    output = 'Sorry, I did not understand that.'
+    output = 'Entschuldigung, das habe ich nicht verstanden.'
     var = ''
   elif  sum(inp[0]) == 0:
-    output = 'Hello, my friend. Unfortunately, I did not really understand that.'
+    output = 'Tut mir leid, das sagt mir leider nichts.'
   elif var == 'Beratung':
     output = '''Suchst du Informationen zur Beratungsangelegenheiten? \n
     Zu folgenden Themen konnten wir Informationen finden: 
@@ -41,22 +41,25 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
     prediction_inverse_transformed = ohe2.inverse_transform(prediction)
     var_feeling = prediction_inverse_transformed[0]
 
-    if max_pred <= 0.28:
-      output = 'Sorry, I did not understand that.'
-    elif var_feeling == 'Öffnungszeiten':
-      output = 'Öffnungszeiten sind xyz...'
-    elif var_feeling == 'LP_Reservieren':
-      output = 'Hier reservierst du...'
-    elif var_feeling == 'Bücher_suchen':
-      output = 'Hier kannst du bücher suchen'
-    elif max_pred > 0.28:
+    if max_pred <= 0.28 or var_feeling == 'Sonstiges':
       output = '''Suchst du Informationen zur Bibliothek?<br>
       Zu folgenden Themen konnten wir Informationen finden:<br>
-      Öffnungszeiten: <a href="https://www.hs-aalen.de/de/pages/bibliothek_oeffnungszeiten">Öffnungszeiten</a><br>
-      Bücher finden: https://www.hs-aalen.de/de/pages/bibliothek_suchenundfinden<br>
-      Reservierung Lernplatz: https://affluences.com/hochschule-aalen/bibliothek<br>
-      Publizieren und Open Access: https://www.hs-aalen.de/de/pages/bibliothek_publizieren-und-open-access<br>
-      Weitere Informationen zur Bibliothek könnt ihr hier finden: https://www.hs-aalen.de/de/facilities/3'''
+      <a href="https://www.hs-aalen.de/de/pages/bibliothek_oeffnungszeiten">Öffnungszeiten</a><br>
+      <a href="https://www.hs-aalen.de/de/pages/bibliothek_suchenundfinden">Büchersuche</a><br>
+      <a href="https://affluences.com/hochschule-aalen/bibliothek>Lernplatzreservierung</a><br>
+      <a href="https://www.hs-aalen.de/de/pages/bibliothek_publizieren-und-open-access">Publizieren und Open Access</a><br>
+      Weitere Informationen zur Bibliothek kannst du <a href="https://www.hs-aalen.de/de/facilities/3">hier</a> finden.'''
+    elif var_feeling == 'Öffnungszeiten':
+      output = '''Öffnungszeiten der Bibliothek:<br>
+      Mo-Fr: 8-20 Uhr<br>
+      Sa: 9-16 Uhr<br></br>
+    Nicht das, was du gesucht hast?<br>
+    <a href="https://www.hs-aalen.de/de/facilities/3">Hier</a> gibt es noch weitere Infos zur Bibliothek, ansonsten kannst du deine 
+    Nachricht anpassen und nochmal eingeben.'''
+    elif var_feeling == 'LP_reservieren':
+      output = 'Hier reservierst du...'
+    elif var_feeling == 'suchen_ausleihen':
+      output = 'Hier kannst du bücher suchen'
 
   elif var == 'Bewerbung':
     output = '''Suchst du Informationen zur Bewerbung? \n

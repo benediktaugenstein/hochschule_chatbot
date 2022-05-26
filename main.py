@@ -64,9 +64,11 @@ def output():
     text = request.form['text']
     if text == '':
       result = 'Bitte gib eine Nachricht ein.'
+      initial_text = text
       #return render_template("input.html",result = result)
-    initial_text = text
-    result = new_input(text, tokenizers, lengths_input, models, ohe, ohe2)
+    else:
+      initial_text = text
+      result = new_input(text, tokenizers, lengths_input, models, ohe, ohe2)
     #result = str(result)
     if 'fin_output' in session:
       session['fin_output'] = session['fin_output'] + '<br></br>Du: ' + initial_text + '<br>' + 'Chatbot: ' + result
