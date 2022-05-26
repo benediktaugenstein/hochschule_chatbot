@@ -10,8 +10,8 @@ from myfuncs import *
 from flask import Flask, render_template, request, session
 
 app = Flask(__name__)
-model = keras.models.load_model('model/hs_chatbot.h5')
-model2 = keras.models.load_model('model/bib.h5')
+model = keras.models.load_model('models/hs_chatbot.h5')
+model2 = keras.models.load_model('models/bib.h5')
 link_general = 'data/general.csv'
 link_bib = 'data/bib.csv'
 models = [model, model2]
