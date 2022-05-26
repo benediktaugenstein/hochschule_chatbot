@@ -22,11 +22,11 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
   elif  sum(inp[0]) == 0:
     output = 'Tut mir leid, das sagt mir leider nichts.'
   elif var == 'Beratung':
-    output = '''Suchst du Informationen zur Beratungsangelegenheiten? \n
-    Zu folgenden Themen konnten wir Informationen finden: 
-    Zentrale Studienberatung, Nachhilfe und psychische Gesundheit: https://www.hs-aalen.de/de/facilities/11
-    Psychosoziale Beratungsstelle: https://studierendenwerk-ulm.de/beratung-betreuung/psychosoziale-beratung/
-    Gleichstellung, Chancengleichheit, Behinderung, Diversity sowie Hilfe bei Diskriminierung oder sexueller Belästigung: https://www.hs-aalen.de/de/facilities/219
+    output = '''Suchst du Informationen zur Beratungsangelegenheiten?<br>
+    Zu folgenden Themen konnten wir Informationen finden:<br>
+    <a href="https://www.hs-aalen.de/de/facilities/11">Zentrale Studienberatung, Nachhilfe und psychische Gesundheit</a><br>
+    <a href="https://studierendenwerk-ulm.de/beratung-betreuung/psychosoziale-beratung/">Psychosoziale Beratungsstelle</a><br>
+    <a href="https://www.hs-aalen.de/de/facilities/219">Gleichstellung, Chancengleichheit, Behinderung, Diversity sowie Hilfe bei Diskriminierung oder sexueller Belästigung</a>
     '''
   elif var == 'Bibliothek':
     inp_feel = tokenizers[1].texts_to_sequences(input_prep)
@@ -62,17 +62,24 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
       output = 'Hier kannst du bücher suchen'
 
   elif var == 'Bewerbung':
-    output = '''Suchst du Informationen zur Bewerbung? \n
-    Hier kannst du Infos zu der Bewerbung sowohl im Bachelor als auch im Master finden:
-    https://www.hs-aalen.de/pages/bewerben
-    '''
+    output = '''Suchst du Informationen zur Bewerbung?<br>
+    Hier kannst du Infos zu der Bewerbung sowohl im Bachelor als auch im Master finden:<br>
+    <a href="https://www.hs-aalen.de/pages/bewerben">https://www.hs-aalen.de/pages/bewerben</a>'''
   elif var == 'Studentisches Leben':
-    output = '''Hast du Fragen zum studentischen Leben hier in Aalen?
-    Zu Folgenden Bereichen konnten Informationen gefunden werden:
-    Wohnen, Mensa, Mobilität, Freizeit & Kultur, Hochschulleben, Hochschulsport, Lernräume, Lehrpreis, Karriereportal
-    Alle Infos findest du hier: https://www.hs-aalen.de/de/facilities/63'''
+    output = '''Hast du Fragen zum studentischen Leben hier in Aalen?<br>
+    Zu Folgenden Bereichen konnten Informationen gefunden werden:<br>
+    Wohnen, Mensa, Mobilität, Freizeit & Kultur, Hochschulleben, Hochschulsport, Lernräume, Lehrpreis, Karriereportal<br>
+    Alle Infos findest du hier: <a href="https://www.hs-aalen.de/de/facilities/63>https://www.hs-aalen.de/de/facilities/63</a>'''
   elif var == 'Studienangebot':
-    output = 'Studienangebot'
+    output = '''Hast du Fragen zum Studienangebot an der Hochschule Aalen?<br>
+    Alle Infos findest du hier: <a href="https://studienangebot.hs-aalen.de/index.html>https://studienangebot.hs-aalen.de/index.html</a>'''
+  elif var == 'Studieren':
+    output = '''Hast du Fragen zum Studium an der Hochschule Aalen?<br>
+    Zu folgenden Themen konnten wir Informationen finden:<br>
+    <a href="https://www.hs-aalen.de/de/facilities/174">Studentische Abteilung</a><br>
+    <a href="https://www.hs-aalen.de/de/facilities/190">Studien- und Prüfungsordnungen/Satzungen</a><br>
+    <a href="https://www.hs-aalen.de/pages/raummanagement_vorlesungsplan">Vorlesungsplan/Raummanagement</a><br>
+    <a href="https://www.hs-aalen.de/pages/studentische-abteilung_0_informationen-fuer-studienanfaenger">Informationen für Erstsemester</a>'''
 
   session['last_message'] = var
 
