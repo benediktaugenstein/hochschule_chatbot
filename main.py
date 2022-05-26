@@ -22,6 +22,8 @@ sequences_array = []
 lengths_input = []
 labels_transformed_array = []
 
+app.secret_key='test'
+
 for i, model in enumerate(models):
   data = pd.read_csv(datasets[i])
 
