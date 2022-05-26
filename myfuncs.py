@@ -46,20 +46,26 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
       Zu folgenden Themen konnten wir Informationen finden:<br>
       <a href="https://www.hs-aalen.de/de/pages/bibliothek_oeffnungszeiten">Öffnungszeiten</a><br>
       <a href="https://www.hs-aalen.de/de/pages/bibliothek_suchenundfinden">Büchersuche</a><br>
-      <a href="https://affluences.com/hochschule-aalen/bibliothek>Lernplatzreservierung</a><br>
+      <a href="https://affluences.com/hochschule-aalen/bibliothek">Lernplatzreservierung</a><br>
       <a href="https://www.hs-aalen.de/de/pages/bibliothek_publizieren-und-open-access">Publizieren und Open Access</a><br>
       Weitere Informationen zur Bibliothek kannst du <a href="https://www.hs-aalen.de/de/facilities/3">hier</a> finden.'''
     elif var_feeling == 'Öffnungszeiten':
       output = '''Öffnungszeiten der Bibliothek:<br>
       Mo-Fr: 8-20 Uhr<br>
-      Sa: 9-16 Uhr<br></br>
+      Sa: 9-16 Uhr<br>
     Nicht das, was du gesucht hast?<br>
     <a href="https://www.hs-aalen.de/de/facilities/3">Hier</a> gibt es noch weitere Infos zur Bibliothek, ansonsten kannst du deine 
     Nachricht anpassen und nochmal eingeben.'''
     elif var_feeling == 'LP_reservieren':
-      output = 'Hier reservierst du...'
+      output = '''Hier kannst du dir einen Lernplatz reservieren: <a href="https://affluences.com/hochschule-aalen/bibliothek">Lernplatzreservierung</a><br>
+      Nicht das, was du gesucht hast?<br>
+      <a href="https://www.hs-aalen.de/de/facilities/3">Hier</a> gibt es noch weitere Infos zur Bibliothek, ansonsten kannst du deine 
+      Nachricht anpassen und nochmal eingeben.'''
     elif var_feeling == 'suchen_ausleihen':
-      output = 'Hier kannst du bücher suchen'
+      output = '''Hier kannst du Bücher und Dokumente der Bibliothek durchsuchen: <a href="https://www.hs-aalen.de/de/pages/bibliothek_suchenundfinden">Büchersuche</a><br>
+      Nicht das, was du gesucht hast?<br>
+      <a href="https://www.hs-aalen.de/de/facilities/3">Hier</a> gibt es noch weitere Infos zur Bibliothek, ansonsten kannst du deine 
+      Nachricht anpassen und nochmal eingeben.'''
 
   elif var == 'Bewerbung':
     output = '''Suchst du Informationen zur Bewerbung?<br>
@@ -69,10 +75,10 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
     output = '''Hast du Fragen zum studentischen Leben hier in Aalen?<br>
     Zu Folgenden Bereichen konnten Informationen gefunden werden:<br>
     Wohnen, Mensa, Mobilität, Freizeit & Kultur, Hochschulleben, Hochschulsport, Lernräume, Lehrpreis, Karriereportal<br>
-    Alle Infos findest du hier: <a href="https://www.hs-aalen.de/de/facilities/63>https://www.hs-aalen.de/de/facilities/63</a>'''
+    Alle Infos findest du hier: <a href="https://www.hs-aalen.de/de/facilities/63">https://www.hs-aalen.de/de/facilities/63</a>'''
   elif var == 'Studienangebot':
     output = '''Hast du Fragen zum Studienangebot an der Hochschule Aalen?<br>
-    Alle Infos findest du hier: <a href="https://studienangebot.hs-aalen.de/index.html>https://studienangebot.hs-aalen.de/index.html</a>'''
+    Alle Infos findest du hier: <a href="https://studienangebot.hs-aalen.de/index.html">https://studienangebot.hs-aalen.de/index.html</a>'''
   elif var == 'Studieren':
     output = '''Hast du Fragen zum Studium an der Hochschule Aalen?<br>
     Zu folgenden Themen konnten wir Informationen finden:<br>
