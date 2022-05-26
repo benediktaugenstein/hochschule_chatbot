@@ -64,14 +64,14 @@ def output():
     text = request.form['text']
     if text == '':
       result = 'Bitte gib eine Nachricht ein.'
-      return render_template("input.html",result = result)
+      #return render_template("input.html",result = result)
     initial_text = text
     result = new_input(text, tokenizers, lengths_input, models, ohe, ohe2)
     #result = str(result)
     if 'fin_output' in session:
-      session['fin_output'] = session['fin_output'] + '<br></br>You: ' + initial_text + '<br>' + 'Chatbot: ' + result
+      session['fin_output'] = session['fin_output'] + '<br></br>Du: ' + initial_text + '<br>' + 'Chatbot: ' + result
     else:
-      session['fin_output'] = '<br></br>You: ' + initial_text + '<br>' + 'Chatbot: ' + result
+      session['fin_output'] = '<br></br>Du: ' + initial_text + '<br>' + 'Chatbot: ' + result
     #var = text + test
     var = session['fin_output']
     #var = result

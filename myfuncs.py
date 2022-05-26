@@ -50,12 +50,12 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
     elif var_feeling == 'Bücher_suchen':
       output = 'Hier kannst du bücher suchen'
     elif max_pred > 0.28:
-      output = '''Suchst du Informationen zur Bibliothek?\n
-      Zu folgenden Themen konnten wir Informationen finden:
-      Öffnungszeiten: https://www.hs-aalen.de/de/pages/bibliothek_oeffnungszeiten
-      Bücher finden: https://www.hs-aalen.de/de/pages/bibliothek_suchenundfinden
-      Reservierung Lernplatz: https://affluences.com/hochschule-aalen/bibliothek
-      Publizieren und Open Access: https://www.hs-aalen.de/de/pages/bibliothek_publizieren-und-open-access
+      output = '''Suchst du Informationen zur Bibliothek?<br>
+      Zu folgenden Themen konnten wir Informationen finden:<br>
+      Öffnungszeiten: <a href="https://www.hs-aalen.de/de/pages/bibliothek_oeffnungszeiten">Öffnungszeiten</a><br>
+      Bücher finden: https://www.hs-aalen.de/de/pages/bibliothek_suchenundfinden<br>
+      Reservierung Lernplatz: https://affluences.com/hochschule-aalen/bibliothek<br>
+      Publizieren und Open Access: https://www.hs-aalen.de/de/pages/bibliothek_publizieren-und-open-access<br>
       Weitere Informationen zur Bibliothek könnt ihr hier finden: https://www.hs-aalen.de/de/facilities/3'''
 
   elif var == 'Bewerbung':
