@@ -3,19 +3,49 @@ buch suchen,suchen_ausleihen
 buch ausleihen,suchen_ausleihen
 bücher ausleihen,suchen_ausleihen
 wie kann ich bücher ausleihen?,suchen_ausleihen
-bibliothek öffnungszeiten,Öffnungszeiten
-bibliothek,Sonstiges
-bücherei,Sonstiges
-buch,Sonstiges
-bücher,Sonstiges
+buch ausleihen hochschule,suchen_ausleihen
+ausleihung buch,suchen_ausleihen
+suche buch,suchen_ausleihen
+büchersuche,suchen_ausleihen
+buch suche,suchen_ausleihen
+bibliothek suche,suchen_ausleihen
+bib suche,suchen_ausleihen
 buch bestellen,suchen_ausleihen
 ich möchte bücher bestellen,suchen_ausleihen
+wie leihe ich bücher,suchen_ausleihen
+wie suche ich bücher,suchen_ausleihen
+welche bücher gibt es in der bib,suchen_ausleihen
 bücher leihen,suchen_ausleihen
 ausleihen,suchen_ausleihen
 buch vormerken,suchen_ausleihen
 lernplatz,LP_reservieren
 lernplatz reservieren,LP_reservieren
 Lernplätze,LP_reservieren
+lern platz,LP_reservieren
+lernplatz reservierung,LP_reservieren
+reservieren lernplatz,LP_reservieren
+reservieren lern platz,LP_reservieren
+lernplatz besetzen,LP_reservieren
+platz lernen,LP_reservieren
+platz lern besetzung,LP_reservieren
+bibliothek öffnungszeiten,Öffnungszeiten
+bücherei öffnungszeiten,Öffnungszeiten
+bücherei öffnung,Öffnungszeiten
+bib öffnung,Öffnungszeiten
+bibliothek öffnen,Öffnungszeiten
+öffnung bücherei,Öffnungszeiten
+öffnung zeiten bib,Öffnungszeiten
+öffnungs zeiten bücherei,Öffnungszeiten
+bibliothek öffnung,Öffnungszeiten
+bib,Sonstiges
+bib aalen,Sonstiges
+bib hochschule,Sonstiges
+bibliothek,Sonstiges
+bibliothek hochschule,Sonstiges
+bücherei,Sonstiges
+bücherei aalen,Sonstiges
+buch,Sonstiges
+bücher,Sonstiges
 open access,Sonstiges
 was ist open access,Sonstiges
 publizieren unter open access,Sonstiges
@@ -23,5 +53,3 @@ open acces informationen,Sonstiges
 publikation,Sonstiges
 publikation open access,Sonstiges
 publizieren,Sonstiges
-bücherei öffnungszeiten,Öffnungszeiten
-bücherei öffnung,Öffnungszeiten
