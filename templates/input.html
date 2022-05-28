@@ -2,12 +2,13 @@
 <html lang="en">
   
     <head>
-        <title>Chatbot</title>
+        <title>Hochschul-Chatbot</title>
     </head>
 
     <body OnLoad="document.myform.text.focus();">
       
-      <h2>Chatbot</h2>
+      <h2>Hochschul-Chatbot</h2>
+      <h3>Du hast Fragen zu Hochschulangelegenheiten? Dann frag den Hochschul-Chatbot nach Hilfe!</h3>
       
       <div style="overflow:hidden; height:250px; width:500px; display:flex; flex-direction:column-reverse; border: 2px solid #e7dddd; border-radius:16px;">
         <div style="overflow:auto; height:250px; width:500px; display:flex; flex-direction:column-reverse;">
@@ -16,8 +17,8 @@
       </div>
              
       <form method="POST" name="myform">
-        <input name="text" id="text">
-        <input type="submit">
+        <input name="text" id="text" placeholder="Deine Nachricht/Frage...">
+        <input type="submit" value="Senden">
       </form>
       
     </body>
