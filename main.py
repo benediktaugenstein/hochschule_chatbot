@@ -25,7 +25,7 @@ labels_transformed_array = []
 app.secret_key='test'
 
 for i, model in enumerate(models):
-  data = pd.read_csv(datasets[i])
+  data = pd.read_csv(datasets[i], encoding='latin_1')
 
   sentences = data['Input']
   labels = data['Output']
