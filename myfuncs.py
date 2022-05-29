@@ -8,7 +8,7 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
     sc = SpellChecker(language='de')
     sc.word_frequency.load_text_file('data/word_list.txt')
     word_new = sc.correction(word)
-    input_initial.replace(word, word_new)
+    input_initial = input_initial.replace(word, word_new)
   input_prep = [input_initial]
   inp = tokenizers[0].texts_to_sequences(input_prep)
   inp = pad_sequences(inp, maxlen=lengths_input[0], padding='post', truncating='post')
