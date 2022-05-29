@@ -1,6 +1,14 @@
 def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
   from tensorflow.keras.preprocessing.sequence import pad_sequences
+  from spellchecker import SpellChecker
+  import string
+  input_initial = input_initial.translate(str.maketrans('', '', string.punctuation))
   from flask import session
+  for word in input_initial.split():
+    sc = SpellChecker(language='de')
+    sc.word_frequency.load_text_file('data/word_list.txt')
+    word_new = sc.correction(word)
+    input_initial.replace(word, word_new)
   input_prep = [input_initial]
   inp = tokenizers[0].texts_to_sequences(input_prep)
   inp = pad_sequences(inp, maxlen=lengths_input[0], padding='post', truncating='post')

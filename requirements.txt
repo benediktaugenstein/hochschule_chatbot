@@ -3,3 +3,4 @@ flask
 tensorflow-cpu
 scikit-learn
 pandas
+pyspellchecker
