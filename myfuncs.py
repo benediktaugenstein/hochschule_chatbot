@@ -24,7 +24,7 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
   prediction_inverse_transformed = ohe.inverse_transform(prediction)
   #print('Predicted category is: ', prediction_inverse_transformed[0])
   var = prediction_inverse_transformed[0]
-  if max_pred <= 0.28:
+  if max_pred <= 0.25:
     output = 'Entschuldigung, das habe ich nicht verstanden.'
     var = ''
   elif  sum(inp[0]) == 0:
