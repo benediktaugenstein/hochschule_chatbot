@@ -1,26 +1,26 @@
 Input,Output
 buch suchen,suchen_ausleihen
 buch ausleihen,suchen_ausleihen
-bücher ausleihen,suchen_ausleihen
-wie kann ich bücher ausleihen?,suchen_ausleihen
+bÃ¼cher ausleihen,suchen_ausleihen
+wie kann ich bÃ¼cher ausleihen?,suchen_ausleihen
 buch ausleihen hochschule,suchen_ausleihen
 ausleihung buch,suchen_ausleihen
 suche buch,suchen_ausleihen
-büchersuche,suchen_ausleihen
+bÃ¼chersuche,suchen_ausleihen
 buch suche,suchen_ausleihen
 bibliothek suche,suchen_ausleihen
 bib suche,suchen_ausleihen
 buch bestellen,suchen_ausleihen
-ich möchte bücher bestellen,suchen_ausleihen
-wie leihe ich bücher,suchen_ausleihen
-wie suche ich bücher,suchen_ausleihen
-welche bücher gibt es in der bib,suchen_ausleihen
-bücher leihen,suchen_ausleihen
+ich mÃ¶chte bÃ¼cher bestellen,suchen_ausleihen
+wie leihe ich bÃ¼cher,suchen_ausleihen
+wie suche ich bÃ¼cher,suchen_ausleihen
+welche bÃ¼cher gibt es in der bib,suchen_ausleihen
+bÃ¼cher leihen,suchen_ausleihen
 ausleihen,suchen_ausleihen
 buch vormerken,suchen_ausleihen
 lernplatz,LP_reservieren
 lernplatz reservieren,LP_reservieren
-Lernplätze,LP_reservieren
+LernplÃ¤tze,LP_reservieren
 lern platz,LP_reservieren
 lernplatz reservierung,LP_reservieren
 reservieren lernplatz,LP_reservieren
@@ -28,24 +28,24 @@ reservieren lern platz,LP_reservieren
 lernplatz besetzen,LP_reservieren
 platz lernen,LP_reservieren
 platz lern besetzung,LP_reservieren
-bibliothek öffnungszeiten,Öffnungszeiten
-bücherei öffnungszeiten,Öffnungszeiten
-bücherei öffnung,Öffnungszeiten
-bib öffnung,Öffnungszeiten
-bibliothek öffnen,Öffnungszeiten
-öffnung bücherei,Öffnungszeiten
-öffnung zeiten bib,Öffnungszeiten
-öffnungs zeiten bücherei,Öffnungszeiten
-bibliothek öffnung,Öffnungszeiten
+bibliothek Ã¶ffnungszeiten,Ã–ffnungszeiten
+bÃ¼cherei Ã¶ffnungszeiten,Ã–ffnungszeiten
+bÃ¼cherei Ã¶ffnung,Ã–ffnungszeiten
+bib Ã¶ffnung,Ã–ffnungszeiten
+bibliothek Ã¶ffnen,Ã–ffnungszeiten
+Ã¶ffnung bÃ¼cherei,Ã–ffnungszeiten
+Ã¶ffnung zeiten bib,Ã–ffnungszeiten
+Ã¶ffnungs zeiten bÃ¼cherei,Ã–ffnungszeiten
+bibliothek Ã¶ffnung,Ã–ffnungszeiten
 bib,Sonstiges
 bib aalen,Sonstiges
 bib hochschule,Sonstiges
 bibliothek,Sonstiges
 bibliothek hochschule,Sonstiges
-bücherei,Sonstiges
-bücherei aalen,Sonstiges
+bÃ¼cherei,Sonstiges
+bÃ¼cherei aalen,Sonstiges
 buch,Sonstiges
-bücher,Sonstiges
+bÃ¼cher,Sonstiges
 open access,Sonstiges
 was ist open access,Sonstiges
 publizieren unter open access,Sonstiges
