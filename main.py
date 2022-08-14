@@ -63,14 +63,15 @@ def my_form():
 # Ermittlung der Nutzereingabe sowie Ermittlung der Antwort
 @app.route('/', methods=['POST'])
 def output():
-    text = request.form['text']
+    text = request.form['text'] # Ermittlung der Eingabe aus dem Template
     if text == '':
       result = 'Bitte gib eine Nachricht ein.'
       initial_text = text
     else:
       initial_text = text
-      result = new_input(text, tokenizers, lengths_input, models, ohe, ohe2) # Diese Funktion befindet sich in myfuncs.py
+      result = new_input(text, tokenizers, lengths_input, models, ohe, ohe2) # Diese Funktion befindet sich in myfuncs.py, hier werden Vorhersagen durch die Modelle getroffen
       
+    # Kombination der Eingaben und der Antwort mit vorherigen Eingaben und Antworten (um den "Chatverlauf" sehen zu können)
     if 'fin_output' in session:
       session['fin_output'] = session['fin_output'] + '<br></br>Du: ' + initial_text + '<br>' + 'Chatbot: ' + result
     else:
@@ -79,6 +80,7 @@ def output():
     var = session['fin_output']
     result = str(var)
     
+    # Ausgabe im HTML-Template
     return render_template("input.html",result = result)
 
 #if __name__ == '__main__':
