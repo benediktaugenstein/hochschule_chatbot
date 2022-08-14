@@ -1,19 +1,26 @@
+# Funktion zur Ermittlung einer Antwort des Chatbots basierend auf einer Nutzereingabe
 def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
+  # Importieren von genutzten Softwarebibliotheken
   from tensorflow.keras.preprocessing.sequence import pad_sequences
   from spellchecker import SpellChecker
   import string
-  input_initial = input_initial.translate(str.maketrans('', '', string.punctuation))
+  input_initial = input_initial.translate(str.maketrans('', '', string.punctuation)) # Satzzeichen entfernen
   from flask import session
+  
+  # Spell checking - Korrigieren der Eingabe, falls ein Wort falsch geschrieben wurde
   for word in input_initial.split():
     sc = SpellChecker(language='de')
     sc.word_frequency.load_text_file('data/word_list.txt')
     word_new = sc.correction(word)
     input_initial = input_initial.replace(word, word_new)
+  
+  # Tokenisierung und Padding der Eingabe
   input_prep = [input_initial]
   inp = tokenizers[0].texts_to_sequences(input_prep)
   inp = pad_sequences(inp, maxlen=lengths_input[0], padding='post', truncating='post')
+  
+  # Vorhersage der übergeordneten Klasse
   prediction = models[0].predict(inp)
-
   max_pred = max(prediction[0])
   for i, x in enumerate(prediction[0]):
     if x == max_pred:
@@ -21,8 +28,12 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
       prediction[0][i] = 1
     else:
       prediction[0][i]=0
+      
+  # Ermittlung des Labels (Name der Klasse) aus der Vorhersage
   prediction_inverse_transformed = ohe.inverse_transform(prediction)
   #print('Predicted category is: ', prediction_inverse_transformed[0])
+  
+  # Ermittlung der Antwort basierend auf der Klasse oder erneute Klassifikation (bei Bibliothek)
   var = prediction_inverse_transformed[0]
   if max_pred <= 0.25:
     output = 'Entschuldigung, das habe ich nicht verstanden.'
@@ -39,7 +50,7 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
   elif var == 'Bibliothek':
     inp_feel = tokenizers[1].texts_to_sequences(input_prep)
     inp_feel = pad_sequences(inp_feel, maxlen=lengths_input[1], padding='post', truncating='post')
-    prediction = models[1].predict(inp_feel)
+    prediction = models[1].predict(inp_feel) # Erneute Klassifikation für Anfragen zur Bibliothek
     max_pred = max(prediction[0])
     for i, x in enumerate(prediction[0]):
       if x == max_pred:
@@ -47,9 +58,9 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
       else:
         prediction[0][i]=0
     prediction_inverse_transformed = ohe2.inverse_transform(prediction)
-    var_feeling = prediction_inverse_transformed[0]
+    var_bib = prediction_inverse_transformed[0]
 
-    if max_pred <= 0.28 or var_feeling == 'Sonstiges':
+    if max_pred <= 0.28 or var_bib == 'Sonstiges':
       output = '''Suchst du Informationen zur Bibliothek?<br>
       Zu folgenden Themen konnten wir Informationen finden:<br>
       <a target="_blank" href="https://www.hs-aalen.de/de/pages/bibliothek_oeffnungszeiten">Öffnungszeiten</a><br>
@@ -57,19 +68,19 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
       <a target="_blank" href="https://affluences.com/hochschule-aalen/bibliothek">Lernplatzreservierung</a><br>
       <a target="_blank" href="https://www.hs-aalen.de/de/pages/bibliothek_publizieren-und-open-access">Publizieren und Open Access</a><br>
       Weitere Informationen zur Bibliothek kannst du <a target="_blank" href="https://www.hs-aalen.de/de/facilities/3">hier</a> finden.'''
-    elif var_feeling == 'Öffnungszeiten':
+    elif var_bib == 'Öffnungszeiten':
       output = '''Öffnungszeiten der Bibliothek:<br>
       Mo-Fr: 8-20 Uhr<br>
       Sa: 9-16 Uhr<br>
     Nicht das, was du gesucht hast?<br>
     <a target="_blank" href="https://www.hs-aalen.de/de/facilities/3">Hier</a> gibt es noch weitere Infos zur Bibliothek, ansonsten kannst du deine 
     Nachricht anpassen und nochmal eingeben.'''
-    elif var_feeling == 'LP_reservieren':
+    elif var_bib == 'LP_reservieren':
       output = '''Hier kannst du dir einen Lernplatz reservieren: <a target="_blank" href="https://affluences.com/hochschule-aalen/bibliothek">Lernplatzreservierung</a><br>
       Nicht das, was du gesucht hast?<br>
       <a target="_blank" href="https://www.hs-aalen.de/de/facilities/3">Hier</a> gibt es noch weitere Infos zur Bibliothek, ansonsten kannst du deine 
       Nachricht anpassen und nochmal eingeben.'''
-    elif var_feeling == 'suchen_ausleihen':
+    elif var_bib == 'suchen_ausleihen':
       output = '''Hier kannst du Bücher und Dokumente der Bibliothek durchsuchen: <a target="_blank" href="https://www.hs-aalen.de/de/pages/bibliothek_suchenundfinden">Büchersuche</a><br>
       Informationen zum Ausleihen findest du <a target="_blank" href="https://www.hs-aalen.de/de/pages/bibliothek_ausleihen-und-bestellen">hier</a>.
       Nicht das, was du gesucht hast?<br>
@@ -100,6 +111,8 @@ def new_input(input_initial, tokenizers, lengths_input, models, ohe, ohe2):
 
   var_string_prep = output
   var_string = str(var_string_prep)
+  
+  # Ausgabe der Antwort
   return var_string
   
  
