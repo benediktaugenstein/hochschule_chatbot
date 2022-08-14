@@ -21,7 +21,7 @@ tokenizer.fit_on_texts(sentences)
 word_index = tokenizer.word_index
 sequences = tokenizer.texts_to_sequences(sentences)
 
-# Padding der Eingabesequenzenund
+# Padding der Eingabesequenzen
 sequences = pad_sequences(sequences, padding='post', truncating='post')
 
 #Wortanzahl ermitteln
@@ -30,7 +30,7 @@ word_count = len(word_index)
 # Länge der Eingabe ermitteln (Anzahl der Eingabewerte)
 len_input = len(sequences[0])
 
-# Lables in Zahlenwerte umwandeln (One-hot)
+# Labels in Zahlenwerte umwandeln (One-hot encoding)
 ohe = LabelBinarizer()
 labels_transformed = ohe.fit_transform(labels)
 len_output = len(labels_transformed[0])
@@ -47,7 +47,7 @@ model = tf.keras.Sequential([
 model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
 model.summary()
 
-# Anzahl der Epochen und validation split festlegen, Modell trainieren
+# Anzahl der Epochen und Prozentsatz für Validierung festlegen, Modell trainieren
 num_epochs = 50
 validation_percentage = 0.2
 history = model.fit(sequences, labels_transformed, epochs=num_epochs, verbose=1, batch_size = 20, shuffle=True, validation_split=validation_percentage)
