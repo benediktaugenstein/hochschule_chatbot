@@ -11,7 +11,7 @@ training: Skript (training_script.py), welches für das Trainieren der Modelle v
 ### Dateien
 Procfile: Festlegung des Python-Skripts, welches innerhalb der Flask Web-App ausgeführt werden soll  
 main.py: Anzeigen der Web-App, Abfragen der Nutzereingaben sowie Anzeigen der Ergebnisse unter Verwendung des HTML-templates  
-myfuncs.py: Funktion zur Ermittlung der Antwort des Chatbots durch Analyse der Nutzereingabe  
+myfuncs.py: Korrektur bei Rechtschreibfehlern innerhalb der Nutzereingabe sowie Funktion zur Ermittlung der Antwort des Chatbots durch Analyse der Nutzereingabe  
 requirements.txt: Erforderliche Softwarebibliotheken  
 runtime.txt: Festlegen der Python-Version  
 
