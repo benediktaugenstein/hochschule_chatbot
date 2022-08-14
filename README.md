@@ -1,5 +1,3 @@
-# hochschule_chatbot
-
 ## Erklärung der Struktur des Repositorys
 
 ### Ordner
