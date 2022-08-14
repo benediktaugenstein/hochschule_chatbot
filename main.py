@@ -1,3 +1,4 @@
+# Importieren von genutzten Softwarebibliotheken
 import os
 import sys
 import tensorflow as tf
@@ -9,6 +10,7 @@ import pandas as pd
 from myfuncs import *
 from flask import Flask, render_template, request, session
 
+# Festlegung relevanter Variablen
 app = Flask(__name__)
 model = keras.models.load_model('models/hs_chatbot.h5')
 model2 = keras.models.load_model('models/bib.h5')
@@ -24,6 +26,8 @@ labels_transformed_array = []
 
 app.secret_key='test'
 
+'''Tokenisierung der möglichen Eingaben sowie Encodierung (one-hot encoding) 
+der möglichen Ausgabewerte (Labels) für die unterschiedlichen Modelle'''
 for i, model in enumerate(models):
   data = pd.read_csv(datasets[i])
 
