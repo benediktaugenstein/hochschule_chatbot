@@ -26,8 +26,7 @@ labels_transformed_array = []
 
 app.secret_key='test'
 
-'''Tokenisierung der möglichen Eingaben sowie Encodierung (one-hot encoding) 
-der möglichen Ausgabewerte (Labels) für die unterschiedlichen Modelle'''
+#Tokenisierung der möglichen Eingaben sowie Encodierung (one-hot encoding) der möglichen Ausgabewerte (Labels) für die unterschiedlichen Modelle
 for i, model in enumerate(models):
   data = pd.read_csv(datasets[i])
 
@@ -55,33 +54,31 @@ for i, model in enumerate(models):
   else: # Feeling
     ohe2 = LabelBinarizer()
     labels_transformed_feeling = ohe2.fit_transform(labels)
-  #len_output = len(labels_transformed[0])
 
-#app.secret_key='test'
-
+# Festlegung des templates zum Anzeigen der Web-App
 @app.route('/')
 def my_form():
     return render_template('input.html')
 
+# Ermittlung der Nutzereingabe sowie Ermittlung der Antwort
 @app.route('/', methods=['POST'])
 def output():
     text = request.form['text']
     if text == '':
       result = 'Bitte gib eine Nachricht ein.'
       initial_text = text
-      #return render_template("input.html",result = result)
     else:
       initial_text = text
-      result = new_input(text, tokenizers, lengths_input, models, ohe, ohe2)
-    #result = str(result)
+      result = new_input(text, tokenizers, lengths_input, models, ohe, ohe2) # Diese Funktion befindet sich in myfuncs.py
+      
     if 'fin_output' in session:
       session['fin_output'] = session['fin_output'] + '<br></br>Du: ' + initial_text + '<br>' + 'Chatbot: ' + result
     else:
       session['fin_output'] = '<br></br>Du: ' + initial_text + '<br>' + 'Chatbot: ' + result
-    #var = text + test
+    
     var = session['fin_output']
-    #var = result
     result = str(var)
+    
     return render_template("input.html",result = result)
 
 #if __name__ == '__main__':
